@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: locationrooftop-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: ADMIN_PASSWORD
+        value: "119722"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RENDER
+        value: "true"
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
